@@ -1,0 +1,19 @@
+# 忽略 Python 缓存文件
+__pycache__/
+*.pyc
+
+# 忽略虚拟环境文件夹
+venv/
+.venv/
+
+# 忽略环境变量文件（绝不能把 API Key 传到 GitHub！）
+.env
+
+# 忽略可能生成的巨大的视频或音频文件
+*.mp4
+*.wav
+
+# 忽略所有 whisper 模型文件
+*.bin
+models/
+.env

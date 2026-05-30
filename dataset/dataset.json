@@ -1,0 +1,387 @@
+[
+  {
+    "inputs": {
+      "video_filename": "case_01.mp4"
+    },
+    "outputs": {
+      "gold_transcription": "老师的介绍，也非常感谢股权会的各位老师的邀请。我今天呢，报告的题目是 Learning Robust。The decision rules for censored and compounded data.我们的这个工作呢，主要是 motivated by 两两个比较经典的 Clinical data sets。我们主要解决了 address 了三个 key challenge，一个呢是 tail control，一个呢是生存时间里面的删失censoring，以及呢对于观察性数据可能会存在看不见的混杂。针对这三个挑战呢，我们去学习稳健的决策的规则。对，我们呢，主要关注的是所谓的 individualized treatment rule。一个 individualized treatment rule 呢。它是一个mapping，我们这里就 focus on deterministic case，它是一个 mapping 映射，从 X space 呢映射到 A space。这个 X 呢是 individual 的characteristics，我们大家可以设想在精准医疗的场景中，它包含比如年龄、性别、基因等等。我们要学习的呢是这个 treatment A，大家可以想象成比如 minus y 呢，是，control，untreated， y 呢，是treated，给药不给药。或者呢，是在癌症病人例子里呢，可能是这种放疗 versus 化疗。那么我们总的一个 objective 呢，就是去最优化一个 optimize criteria 方式，那这个 criteria 方式呢，是关于 potential outcome 的潜在结果。那么由于呢，我们是要做决策，所以我们关心的呢，是这个潜在结果，而不仅仅呢，是一个相关关系，因为我们决策要做干预。那我们学习呢，这个最优的 individualized treatment rule 呢， ITR 呢，也有很广泛的应用。包括呢，在 precision medicine，精准医疗，以及呢，精准营销， targeting marketing。那我这里呢，主要就 focus on 第一个example， precision medicine。我们去学习一个个性化的治疗规则， personalized treatment rule。那我们先简单看一下 learning optimal treatment rule 的它的一些literature，最经典的一些方法呢，主要是 focus on 这个 utilitarian welfare，就是去最大化这个 potential outcome 的均值。Regression based method, the a learning focus on, you know, advantage. When we graduate.角度，以及呢， employee welfare 最大化，直接去最大化值函数，以及呢，今天。 Classification based. approach，就相当于呢，把问题转化成一个分类问题，就可以用一些这个机器学习里面的分类的这种手段。可以，以及呢，如果你的这个 treatment a 呢，是连续的，可能是 personalized dose finding 等等。那么对于以往呢，它这种 utilitarian welfare 的这个 ITR 的学习呢，那可能针对就是这种，比如 symmetric distribution 呢，可能performance。会更好。那么今天呢，我们来看一下这两个比较经典的 clinical datasets。这两篇都发表在医学四大刊上。第一个呢， ACTG 175 trial 呢，是发表在新英格兰上，它主要 focus on 是个艾滋病人，我们关注的 outcome 呢，是生存时间， survival time。我们可以很清楚的看到，从图上我们 outcome 的 distribution 呢，是skewed，是有偏的。对于这种 heavy tail 的。数据呢，我们怎么样去进行这种最优的策略学习？同时呢，如果熟悉这个生存分析的老师或者同学呢，都了解，那这个数据呢，往往都伴随着这种删失，有 lot of follow up 导致的，那么这时候呢，我们第二个切入点呢，就是怎么样去。Dress concise me. Double blind, randomized try.file data，同时这个 hc data，就是第二个右边的 data 呢，它呢不是一个 randomized trial，是一个of。",
+      "gold_ocr": "Learning Robust Decision Rules for Censored and Confounded Data\nYifan Cui\nZhejiang University\nDec 26, 2025\nBackground\nIndividualized Treatment Rule (ITR)\nDefinition\nA deterministic Individualized Treatment Rule (ITR) is a function:\nd: \\mathcal{X} \\to \\mathcal{A},\nwhere\n\\mathcal{X} is the feature space (individual characteristics).\n\\mathcal{A} is the set of possible treatments \\{-1, 1\\}.\nObjective: Optimize a criterion function about potential outcomes.\nYifan Cui (ZJU)\nLearning Robust Decision Rules\nDec 26, 2025\n3 / 61\nWide Applications: precision medicine, targeted marketing.\n(a) Personalized treatment regimes\n(b) Customized pricing strategies\nBackground\nLiterature Review for Learning Optimal Rules\nOptimal rules for utilitarian welfare:\nQ-learning (Watkins and Dayan, 1992; Robins, 2004);\nA-learning (Murphy, 2003; Fan et al., 2017; Shi et al., 2018);\nEmpirical welfare maximization (Qian and Murphy, 2011; Kitagawa and Tetenov, 2018; Athey and Wager, 2021);\nClassification-based approaches (Zhao et al., 2012; Zhang et al., 2012; Rubin and van der Laan, 2012);\nPersonalized dose finding (Chen et al., 2016; Kallus and Zhou, 2018; Ai et al., 2024).\nBackground\nTwo Clinical Datasets\nACTG 175 Trial (Hammer et al., 1996)\nRight Heart Catheterization Dataset (Connors et al., 1996)\nACTG Trial Data\nRHC Data\nDensity\nSurvival Time\nDensity\nSurvival Time\nYifan Cui (ZJU)\nLearning Robust Decision Rules\nDec 26, 2025\n6 / 61",
+      "gold_window": [
+        [
+          21.6,
+          81.6
+        ],
+        [
+          121.2,
+          154.2
+        ]
+      ],
+      "must_have_points": [
+        "必须明确提到个性化治疗规则（ITR）的定义",
+        "必须概括ITR领域的一些经典文献和方法"
+      ],
+      "ground_truth_summary": "视频围绕 “Learning Robust The decision rules for censored and compounded data” 展开，介绍了相关工作的动机、要解决的挑战、关注的个性化治疗规则及其应用，还提及了学习最优治疗规则的经典方法和两个经典临床数据集。"
+    },
+    "meta_info": {
+      "difficulty_level": "easy",
+      "asr_quality": {
+        "accent": "标准口音",
+        "speed": "适中",
+        "oral_correction": "无口头修正"
+      },
+      "ocr_quality": {
+        "ppt_density": "稀疏",
+        "formula_count": 1
+      }
+    }
+  },
+  {
+    "inputs": {
+      "video_filename": "case_02.mp4"
+    },
+    "outputs": {
+      "gold_transcription": "回顾一下，在比较经典的因果推断的场景里面呢，我们怎么样去。Identify to the counterfeit to me for report every.treatment effect，主要呢是基于这三个假设。我们前面呢也假设了consistency， T 等于TA，positivity，以及呢 unconfoundedness 这个假设。 Literature 这里面呢，有很多关于 IDR 的方法呢，是尝试着去弱化consistency、 positivity 以及unconfoundedness。那我们今天这里呢，重点呢就放在弱化 unconfoundedness 这一假设，呢我们就假设 consistency 和positivity。那我们先呢，看一下这个 unconfoundedness 这个假设呢，大概说了一件什么事情。如果不是特别熟悉因果推断的同学们呢，可能会一开始想到这个 unconfoundedness 呢，主要想到的是左边这个图A。图 A 呢， L 包括了 A 和 T 它所有的共因，那么很自然，当你 condition on L 的时候呢，你就阻断了 A 到 L 到 T 这个路径，那么只剩下呢， A 到 T 这个路径呢是通的，所以呢，你可以学出 A 到 T 的这么一个音。Make sense to add on component.意思呢是成立。但其实呢，就是 Unconfoundedness 呢，远不仅仅呢，只有这个图A，图B、图 C 呢， Unconfoundedness 也是成立的，虽然图里面有 Unobserved 的这个U。比如呢，大家看图B。这个图里面呢，当你肯定是要 l 的时候呢，其实后门路径呢也被阻断，就是只有 A 到 T 这个前门路径呢是通的。对。那这个地方呢， l 呢，它包含了 A 所有的一个音，什么样的音呢？跟 T share 一个 common cause u 这么样的一个音。对。所以我们叫它 type b proxy，前面的这个共音呢叫 type a proxy。图 C 里面呢，这个 unconfoundness 也成立， l 包含了 T 所有的音，什么样的音呢？跟 A share 一个 common cause u。这样的一个音，我们叫 type c proxy。那在现实生活中呢，可能这个数据也很复杂，场景呢也很多变，那可能呢，是比如像图 D 这样的一个情况，就既有 type a，也有 type b， type c proxy。分别对应的是X、 Z 和W。那大家可以看到，在这个图里面呢， unconfoundness 假设呢，其实还是成立的，因为你 observed co- varis l 呢包含了X、 W 和Z，当你呢阻断了Z、X、 W 呢，并没有 back to pass，从 A 到T，对，就是 A 到 T 的这个因呢，是可以学习出来这个因果关系。但是呢，这个现实生活的这个场景呢，还有可能更复杂，对吧？有可能像图一这种情况， U1 和 U2 呢，它还是要一个 common cause U3。那么从这个图里面呢，就可以看出，这个时候， on the foundation 呢，并不成立了。",
+      "gold_ocr": "Robust Rules with Proxies\nUnconfoundedness\nStandard assumptions for identification of \\( \\beta(a) = \\mathbb{E}(T(a)) \\):\nConsistency:\nT = T(A);\nPositivity:\nf(A = a|L) > 0;\nUnconfoundedness on the basis of measured covariates:\nT(a) \\perp\\perp A | L.\nUnder three assumptions, it is well-known that\n\\( \\beta(a) = \\sum_{l} \\mathbb{E}(T|a,l) f(l) \\).\nYifan Cui (ZJU)\nLearning Robust Decision Rules\nDec 26, 2025\n32 / 61\nUnconfoundedness\nSome data generating mechanisms under which unconfoundedness holds, illustrated in Figures (a)-(c):\nIn Figure (a), L of type a) includes all common causes of A.\nIn Figure (b), L of type b) includes all causes of A that share an unmeasured common cause U (and therefore are associated) with T.\nIn Figure (c), L of type c) includes all causes of T that share an unmeasured common cause U (and therefore are associated) with A.\n(a)\n(b)\n(c)\nUnconfoundedness\nThese three possibilities may co-exist, as displayed in Figure (d), in which L has been decomposed into three bucket types of measured covariates \\( L = (X, W, Z) \\), such that X are measured covariates of type a), Z are measured covariates of type b), while W are measured covariates of type c).\n(d) Coexistence of types a) b) and c)\nYifan Cui (ZJU)\nLearning Robust Decision Rules\nDec 26, 2025\n34 / 61\nViolation of Unconfoundedness\nNote that in order for unconfoundedness to hold in Figure (d), it must be that as encoded in the DAG, unmeasured variables \\( U_1 \\) and \\( U_2 \\) are independent conditional on A, X, Z and W; otherwise, as illustrated in Figure (e), the unblocked backdoor path \\( A - U_2 - U_3 - U_1 - T \\) would invalidate unconfoundedness.\n(d)\n(e)\nYifan Cui (ZJU)\nLearning Robust Decision Rules\nDec 26, 2025\n35 / 61",
+      "gold_window": [
+        [
+          3.6,
+          18.0
+        ],
+        [
+          21.6,
+          181.2
+        ]
+      ],
+      "must_have_points": [
+        "必须提到因果推断领域三大假设，并且弱化unconfoundedness 假设",
+        "明确指出无混淆性假设的本质"
+      ],
+      "ground_truth_summary": "本章节围绕经典因果推断场景展开，指出识别处理效应主要基于一致性（consistency）、正性（positivity）和无混杂性（unconfoundedness）三个假设。文献中有很多关于IDR的方法尝试弱化这三个假设，而今天重点放在弱化无混杂性假设，同时假设一致性和正性成立。"
+    },
+    "meta_info": {
+      "difficulty_level": "easy",
+      "asr_quality": {
+        "accent": "标准口音",
+        "speed": "适中",
+        "oral_correction": "无口头修正"
+      },
+      "ocr_quality": {
+        "ppt_density": "稀疏",
+        "formula_count": 6
+      }
+    }
+  },
+  {
+    "inputs": {
+      "video_filename": "case_03.mp4"
+    },
+    "outputs": {
+      "gold_transcription": "就比如说我前面说的，它在 T 等于2， 2 年这一点的一个变化率，变化率它是一个常数。对，那常数跟这个FI， FI 是一个q维的，对吧？它有什么关系呢？就说我们可以认为它是 FI 的一个函数，这里的是 FI 的一个函数。这个形式看起来有点复杂，其实， FI 是已知的，伽马也是已知的。所以呢，它完全是由 Fi 决定的。你看，因为前面的轨迹模型啊，因为这里的轨迹，这里的轨迹模型里面，第 i 个个体随时间 t 变化的这个轨迹啊，它完全是由 Fi 决定的。所以呢，轨迹特征也完全是由 Fi 决定。Fi 是多元多维的， Q 维的，我们的轨迹特征呢，是一维的。它就写成一个 Fi 的线性组合的函数。所以看起来挺复杂的，其实本质上就是一个 FI 的线性组合。对，那有什么含义呢？比如说前面我们说的 T 等于R，这一年的它的一个变化率，变化率呢就是 T 等于R，就是这里的 T0 如果是R，变化率就是导数，对吧？就前面的轨迹函数派乘以阿尔法的导数呢。因为阿尔法跟 t 没关，它关于 t 的导数呢，就完全在这个派这个导数这里。所以这里的这个派的导数乘以阿尔法呢，代表它在这一点的变化率。就是代表的是个体的变化率，就是slope。变化率呢，它是看不见的。为什么呢？因为阿尔法 i 看不见，阿尔法 i 是驱动第 i 个个体轨迹变化的一个随机变量，它看不见。我们能看见的是什么东西呢？能看见的是yit， yi 在某一些 t 处的取值，这个东西能看见，但是驱动它变化的。阿尔法看不见，阿尔法看不见呢，这个轨迹特征看不见。对，另外一个这种轨迹特征可能的取值啊，是FIT，就是这个轨迹函数在某一个区间的积分，这个东西我们就叫， AUC 啊，这个 AUC 跟分类的那个 AUC 不一样，一个曲线下面的面积，这个东西呢它在一些情况下也能代表一些实际的含义。那这个东西呢，如果这个是它在 T1 到 T2 这个区间的积分呢，它其实本质上是派 T 在这个区间的积分乘以FI。派是已知的，所以呢，它本质上其实也是一个阿尔法 i 的线性组合，",
+      "gold_ocr": "The Proposed Modeling\nWe consider latent individual trajectory features (LITFs), \\( \\phi(\\gamma^{\\top}\\alpha_i) \\), where \\( \\phi(\\cdot) \\) is monotone and \\( \\gamma \\) is known.\nthe latent individual trajectory slope at time \\( t_0 \\), \\( \\dot{f}_i(t_0) = \\dot{\\pi}(t_0)^{\\top}\\alpha_i \\);\nthe latent individual trajectory area under the curve (AUC) over a time interval \\( [t_1, t_2] \\), \\( \\int_{t_1}^{t_2} f_i(t)dt = \\left( \\int_{t_1}^{t_2} \\pi(t)dt \\right)^{\\top}\\alpha_i \\).\nWe assume\n\\( Q_{\\phi(\\gamma^{\\top}\\alpha)}(\\tau|X) = X^{\\top}\\beta_0(\\tau), \\tau \\in (0,1) \\).\n(3)\nThe Proposed Modeling\nWe assume\n\\( Y_i(t) = f_i(t) + \\epsilon_i(t), t > 0 \\),\n(1)\n\\( i = 1, \\dots, n \\).\nWe formulate the latent individual trajectory \\( f_i(t) \\) as\n\\( f_i(t) = f(t; \\alpha_i) \\doteq \\alpha_i^{\\top}\\pi(t) \\),\n(2)\nwhere \\( \\pi(t) \\doteq (B_1(t), \\dots, B_q(t))^{\\top} \\) denotes a set of known basis functions, and \\( \\alpha_i \\doteq (\\alpha_{i1}, \\dots, \\alpha_{iq})^{\\top} \\) is a vector of random parameters.",
+      "gold_window": [
+        [
+          34.8,
+          133.8
+        ],
+        [
+          134.4,
+          182.4
+        ]
+      ],
+      "must_have_points": [
+        "明确瞬时变化率的定义和不可观测性",
+        "要提到曲线下面积 (AUC) 的定义与构造"
+      ],
+      "ground_truth_summary": "这段话详细探讨了纵向数据中个体轨迹特征的数学表达形式及其可观测性问题，指出无论是个体在特定时间点的瞬时变化率（即导数或 Slope），还是在特定时间区间内的曲线下面积，代表实际累积效应的定积分 AUC，不同于机器学习分类评估指标，其数学本质均是由一个多维的、潜在的随机变量与已知的时间轨迹基函数 $\\pi(t)$ 构成的线性组合。"
+    },
+    "meta_info": {
+      "difficulty_level": "hard",
+      "asr_quality": {
+        "accent": "标准口音",
+        "speed": "快",
+        "oral_correction": "无口头修正"
+      },
+      "ocr_quality": {
+        "ppt_density": "密集",
+        "formula_count": 6
+      }
+    }
+  },
+  {
+    "inputs": {
+      "video_filename": "case_04.mp4"
+    },
+    "outputs": {
+      "gold_transcription": "非常荣幸能够有这次机会在狗熊会做报告，展示我们最近的一个工作。我们这个工作呢，主要是结合了迁移学习和因子模型，希望借助迁移学习能够改进存在弱因子的因子模型的估计精度。我们这个工作是与何勇老师、南洋理工的刘栋博士，还有我的师妹孙云静共同合作完成的。那我的汇报主要分为以下几个方面。首先介绍研究背景，因子模型在近 20 多年里已经被广泛的研究，作为一个非常好用的降维工具，因子模型它把高维面板数据可以分解为少数几个潜在因子的线性组合，加上。噪声项的这么一个形式，并且它可以写成如下的矩阵形式。通过把原始的面板数据解释写分解为一些少数的因子的线性组合，加上一个噪声项的这么一个形式，来提取原始变量的一些明显的信息。然后我们可以把它写成一个矩阵形式， X 等于 F Lambda 的转置加E。那么最近呢，有越来越多的工作关注于弱因子模型。这个弱因子指的就是因子，一个因子它具有一个很弱的影响，对于所有的观测值，或者是它仅仅只有影响观测值中的一部分。这个弱因子呢，它其实在实际应用中非常的常见，比如在金融研究或者是宏观经济分析中，有的因子它确实不可能对于所有的变量都有很强的解释性，或者是在一些 group factor model 的研究中，有的 local factor 呢，它只对某一个特定的组起到一定的作用，对于整体的来说并没有什么影响。所以说这部分的因子它显然是弱的，那么研究这个弱因子它其实是有必要的。弱因子假设呢，在不同的文章中是不一样的，有的假设它会反映在 loading 上，有的假设它反映在。因子上，所以说我们这篇文章假设的是，一是这样一个形式， lambda 的转置 lambda 比上 n 的阿尔法趋向于一个正定的矩阵，这个阿尔法呢，就是因子强度。然后也有相当多的工作呢，是分析弱因子的。并且白老师他们2023，还有袁明老师 2024 的工作指出，对于存在弱因子的因子模型，我们用 PCE 方法估计得到的估计量，它在某些特定的假设下，它仍然是一致的。但是呢，它的收敛速度会相对的比较慢一点。那么很自然的一个问题就是，我们能否来改进具有弱因子的因子模型，它的估计的收敛速度呢？我们这个工作就可以给你一个肯定的答复，就是可以的，我们只需要借助迁移学习。通过别 source 数据集提取有用的信息，来辅助估计具有弱因子的 target 数据集，进而提升它的估计精度。那么主要。",
+      "gold_ocr": "TransPCA for Large-dimensional Factor Analysis with Weak Factors: Power Enhancement via Knowledge Transfer\nYalin Wang\nSchool of Mathematics\nShandong University\n(Joint work with Yong He & Dong Liu & Yujing Sun)\nYalin Wang (Shandong University)\nTransfer Factor Model\n1 / 45\nTable of Contents\nBackground & Motivation\nMethodology\nTheoretical Results\nDetermining the number of factors\nEstimation of the factor strengths in target model\nUseful Dataset Selection\nSimulation Study\nEmpirical Applications\nBackground & Motivation\nConsider the large-dimensional factor model for a large panel dataset \\( \\{X_t\\}_{t=1}^T \\),\n\\( X_t = \\Lambda f_t + \\epsilon_t \\),\n\\( X_t \\in \\mathbb{R}^N \\), \\( \\Lambda \\in \\mathbb{R}^{N \\times r} \\) is factor loading matrix, \\( f_t \\in \\mathbb{R}^r \\) are unobserved factors, \\( \\epsilon_t \\in \\mathbb{R}^N \\) represents the idiosyncratic errors. It can also be written in a matrix form\n\\( X = F\\Lambda^{\\top} + E \\).\nSee Bai and Ng (2002), Stock and Watson (2002), Bai (2003), Onatski (2010), Bai and Li (2012), Fan et al. (2013), Barigozzi et al. (2018), He et al. (2022).\nWeak factor: the factor has a weak effect on all observations or it affects only a subset of observations.\n\\( \\Lambda^{\\top}\\Lambda / N^{a} \\rightarrow \\Sigma_{\\Lambda} \\)\n(1)\nRelated work on weak factors: Uematsu and Yamagata (2022a), Uematsu and Yamagata (2022b), Choi and Yuan (2024), Bai and Ng (2023), Duan et al. (2024)\nPotential issues: a slower convergence rate, see Bai and Ng (2023); Choi and Yuan (2024)\nA question naturally arises: is it possible to elevate the convergence rates for the weak factors?\nTransfer Learning",
+      "gold_window": [
+        [
+          16.8,
+          66.0
+        ],
+        [
+          66.6,
+          120.0
+        ],
+        [
+          120.6,
+          131.4
+        ]
+      ],
+      "must_have_points": [
+        "明确提到因子模型的基础定义与矩阵表达",
+        "要提及弱因子模型的概念和场景",
+        "要提及弱因子的数学假设"
+      ],
+      "ground_truth_summary": "该报告详细论述了一项将迁移学习与因子模型相结合的最新学术研究，其核心目的在于提升弱因子模型估计的精度与效率。报告首先对因子模型的理论背景进行了概述。作为一种经典且高效的高维数据降维工具，因子模型通过将高维面板数据分解为少数潜在因子的线性组合与噪声项之和来提取核心信息，其标准矩阵解析形式表示为 $X = F \\Lambda^T + E$。在此基础上，研究进一步切入弱因子的概念。弱因子是指对全局观测值影响微弱，或仅对部分局部观测值产生作用的因子。此类因子在金融实证研究、宏观经济分析以及分组因子模型等实际场景中广泛存在，探讨其统计性质具有高度的现实必要性。在具体的数学设定上，区别于部分文献将弱假设施加于因子本身的设定，该研究选择将弱因子假设反映在载荷矩阵（Loading）层面，设定条件为 $\\frac{\\Lambda^T \\Lambda}{n^\\alpha}$ 渐进趋于一个正定矩阵，其中参数 $\\alpha$ 用于表征因子强度。报告随后指出了现有估计框架的局限性：尽管传统主成分分析（PCA）方法在特定条件下仍能保证弱因子模型估计量的一致性，但其收敛速度表现欠佳。为突破这一瓶颈，该研究创新性地引入了迁移学习机制，通过从相关的源数据集（Source Dataset）中有效提取先验信息，辅助具有弱因子的目标数据集（Target Dataset）完成估计，最终在理论与实践层面成功提升了模型的估计精度与收敛速率。"
+    },
+    "meta_info": {
+      "difficulty_level": "hard",
+      "asr_quality": {
+        "accent": "标准口音",
+        "speed": "适中",
+        "oral_correction": "无口头修正"
+      },
+      "ocr_quality": {
+        "ppt_density": "密集",
+        "formula_count": 3
+      }
+    }
+  },
+  {
+    "inputs": {
+      "video_filename": "case_05.mp4"
+    },
+    "outputs": {
+      "gold_transcription": "非 MSR 模型，那它的核心思想就是说，我把不同的指标 Yj 联合起来一起建模，那我既考虑 Yj 自己对自己的影响，也就这里的D，也考虑我们相互之间的影响，也就是这个Djpj，也就说我们前面那个 row 变成了这里的这个 D 矩阵，那所以说前面来说，对于我们单个这种 SCR 的方法，就是说这里当我的这个大 D 矩阵，它如果是个对角阵的一个特殊情况，所以说呢，这个 MSR 模型它是考虑前，非常全面的，并且它的灵活性是比较高的。那下面是我，它通过这种在我进行变换之后，能够拿到的这个对数自然函数。但可以看到呢，我整个模型它涉及的这个参数呢，就是因为这里是一个矩阵的参数嘛，我如果对我，如果说这个 j 一共有 p 个的话，那它是一个 p 的一个二次函数，它的参数量是非常大的。而且在估计过程中呢，我会它会涉及到各种复杂的矩阵运算，使得它在实际应用中呢，它的计算负担是很重的，甚至说我当我的这里的个数就是 p 比较大的时候，它可能就算不动了。那也就是说在这个猪 2020 年的时候，这篇文章它的数值运算也只讨论了 p 等于 2 的情况。那像我们前面提到的场，区域经济这个指标的场景中呢， p 可能是几十，或者是更大一点，几百等等。如何处理这种情况呢？我们在这篇文章中就给出了一种可能的一种解决思路。首先我们还是从简单的对每一个 YG 建立一个单独的 SAR 模型，但是呢，我们这里会通过这个残差项，就是这个 ε j，来去考虑这一共这有 P 个指标，它们之间的相关性。而我这里这个花写的 ε j，就是 ε 1 到 ε P。它是一个向量，我把它合并起来，就组成了一个大 E 的一个矩阵。我们这里假设对每个样本 i 呢，它有 P 个变量嘛，它的背后呢，是有一个低维的隐藏因子模型，就是这个Zi，它的维度是要比P，也就是这个 epsilon i 的维度是要小的。那如果说我们能把这个隐藏因子，就是 Zi 抽离出来，再把它放回到我们前面的 SCR 模型，这样就会得到了我们的因子增广的 SCR 模型，也就说FSCR。这也是受到我们前面地区，它有，它这空间经济研究的一个启发。也就是说，虽然我们有很多个经济指标，但是在某种程度上，它们是描述一个地区的经济发展情况。那从我们直观来说呢，它就说这些多个指标的背后，它是应该可能，是否是存在某种的低维结构呢？当然我们现在也只是猜想。如果说这里的我的后面的 FSAR 模型，它的因子 Z 如果是已知的呢？那相当于就是说我多了一个控制的解释变量。这样处理带来的好处就是说，我拿到 row 的估计，可能就会有可能会更准确的进行有效估计了，从而使得对于比较大的 P 来说呢，我们可以准确的估计出变量的空间溢出效应。同时这里还有一个好处是说，它还能并行计算，因为可以看到它，我是分开来建模的。那这就是我们整篇文章的主要思想，那下面我会具体来展开汇报我们的模型和结果。对于模型设定方面呢，我们首先有发散个分量的 SCR 模型，也就是说这里允许 P 是发散的。而对于每一个响应变量，也就是对于我们前面的每一个指标 G 来说呢，它就是一个简单的 SCR 模型，它一共有 P 个，允许它，同时我们还允许，Q，也就是斜变量 X 维度，它是发散的。但根据现有模文献中的一些模型设定呢，我们参考了之后，我们会认为说，对于一个给定的 Yj 来说，我们期待这里的贝塔 j 它是一个稀疏的，也就是说有少量的特征，它就是X。",
+      "gold_ocr": "Introduction: One Natural Solution\n光华管理学院\nMultivariate spatial autoregressive (MSAR) model [Yang and Lee, 2017; Zhu et al., 2020]:\n\\( \\mathbb{Y}_j = d_{jj}W\\mathbb{Y}_j + \\sum_{j \\neq j'} d_{j'j}W\\mathbb{Y}_{j'} + \\sum_{k=1}^q \\beta_{kj}\\mathbb{X}_k + \\varepsilon_j \\)\nMatrix form:\n\\( \\mathbb{Y} = W\\mathbb{Y}D + \\mathbb{X}B + \\mathcal{E} \\)\n\\( D = (d_{j'j}) \\in \\mathbb{R}^{p \\times p}, B = (\\beta_{kj}) \\in \\mathbb{R}^{q \\times p} \\)\nLog likelihood function:\n\\( \\mathcal{Y} = (D^{\\top} \\otimes W)\\mathcal{Y} + (I_p \\otimes \\mathbb{X})\\beta + \\mathcal{E} \\)\n\\( \\mathcal{L}(\\theta) = -\\frac{n}{2} \\log(2\\pi|\\Sigma|) + \\log|\\mathcal{S}| - \\frac{1}{2}\\{\\mathcal{S}\\mathcal{Y} - (I_p \\otimes \\mathbb{X})\\beta\\}^{\\top}(\\Sigma_\\varepsilon \\otimes I_n)\\{\\mathcal{S}\\mathcal{Y} - (I_p \\otimes \\mathbb{X})\\beta\\} \\)\n\\( \\mathcal{S} = I_{np} - D^{\\top} \\otimes W \\)\nIntroduction: Proposed Idea\n光华管理学院\nFactor-augmented spatial autoregressive (FSAR) model\n\\( \\mathbb{Y}_1 = \\rho_1W\\mathbb{Y}_1 + \\mathcal{E}_1 \\)\n\\( \\mathbb{Y}_2 = \\rho_2W\\mathbb{Y}_2 + \\mathcal{E}_2 \\)\n\\( \\dots \\)\n\\( \\mathbb{Y}_p = \\rho_pW\\mathbb{Y}_p + \\mathcal{E}_p \\)\n\\( \\varepsilon_i = BZ_i + \\omega_i \\)\n\\( \\begin{bmatrix} \\varepsilon_{11} & \\dots & \\varepsilon_{1p} \\ \\vdots & \\dots & \\vdots \\ \\varepsilon_{n1} & \\dots & \\varepsilon_{np} \\end{bmatrix} \\)\n\\( \\mathbb{Y}_1 = \\rho_1W\\mathbb{Y}_1 + \\mathbb{Z}b_1 + \\Omega_1 \\)\n\\( \\mathbb{Y}_2 = \\rho_2W\\mathbb{Y}_2 + \\mathbb{Z}b_2 + \\Omega_2 \\)\n\\( \\dots \\)\n\\( \\mathbb{Y}_p = \\rho_pW\\mathbb{Y}_p + \\mathbb{Z}b_p + \\Omega_p \\)\n1. Additional 'covariate' (if Z is known)\n2. Computational feasibility and parallel computing\n13\nModel Setup\n光华管理学院\nComponentwise SAR model:\n\\( \\mathbb{Y}_j = \\rho_jW\\mathbb{Y}_j + \\mathbb{X}\\beta_j + \\mathcal{E}_j, j = 1, \\dots, p \\)\n\\( \\mathbb{Y}_j = \\rho_jW\\mathbb{Y}_j + \\mathbb{X}_{(j)}\\beta_{(j)} + \\mathcal{E}_j, j = 1, \\dots, p \\)\n\\( \\mathcal{S}_{(j),T} = \\{1 \\leq k \\leq q: \\beta_{jk}^* \\neq 0\\} \\mathbb{X}_{(j)} = (\\mathbb{X}_k: k \\in \\mathcal{S}_{(j),T}) \\in \\mathbb{R}^{n \\times s_j} \\beta_{(j)} = (\\beta_{jk}: k \\in \\mathcal{S}_{(j),T}) \\in \\mathbb{R}^{s_j} \\)\nA latent factor model:\n\\( \\varepsilon_i = BZ_i + \\omega_i \\)\nFactor-augmented spatial autoregressive (FSAR) model:\n\\( \\mathbb{Y}_j = \\rho_jW\\mathbb{Y}_j + \\mathbb{X}_{(j)}\\beta_{(j)} + \\mathbb{Z}b_j + \\Omega_j, j = 1, \\dots, p \\)\n14",
+      "gold_window": [
+        [
+          0.0,
+          64.2
+        ],
+        [
+          77.4,
+          186.0
+        ]
+      ],
+      "must_have_points": [
+        "要提及多变量空间自回归模型（MSAR）的优势与计算瓶颈",
+        "包含因子增广空间自回归模型（FSAR）的构建思想与优势"
+      ],
+      "ground_truth_summary": "这份报告提出了一种因子增广空间自回归模型（FSAR），旨在解决传统多变量空间自回归模型（MSAR）在处理高维空间面板数据时因参数量呈二次方爆炸而导致的计算瘫痪问题。FSAR 模型的核心思路是“降维与解耦”：首先对每个宏观经济指标进行独立的单变量 SAR 建模，接着假设各指标的残差背后受一个低维隐藏因子驱动，最后将提取出的隐藏因子作为额外的控制变量重新引入到各自的模型中。这种架构不仅显著提升了高维场景下核心空间溢出效应参数的估计精度，还巧妙地将复杂的联合建模转化为支持并行计算的独立建模，成功突破了算力瓶颈，同时该理论框架也能完美兼容发散的响应变量维度、协变量维度以及系数的稀疏性假设。"
+    },
+    "meta_info": {
+      "difficulty_level": "hard",
+      "asr_quality": {
+        "accent": "标准口音",
+        "speed": "快",
+        "oral_correction": "无口头修正"
+      },
+      "ocr_quality": {
+        "ppt_density": "密集",
+        "formula_count": 17
+      }
+    }
+  },
+  {
+    "inputs": {
+      "video_filename": "case_06.mp4"
+    },
+    "outputs": {
+      "gold_transcription": "那么网络结构本身和网络结构中节点上面的这些变量呢，共同的结构呃构成了我们想要讨论的这个网络数据，而传统的这个对于网络数据的一个建模呢，其实有非常常用的一个啊计量经济里的工具呢，它叫做空间自回归模型，那么我们后面就简称这样的模型为SAR模型。首先我们先要把刚才所提到的这个网络结构给它抽象，抽象为一个数学表达，我们用一个呃这个大N乘大N的矩阵A来表示这个网络结构，那么N呢是我们这个网络中节点的一个数量。这个矩阵A它的第ij个元素我们认为如果说两个第i个个体和第j个个体呢它有一个连接的话，那么这个元素我们给它指定为1，否则呢这个元素它就等于0，这里我们就用A这个矩阵构造出来了一个包含网络结构信息的连接矩阵，呃那么我们来介绍一下什么是空间自回归模型，这个空间SAR模型呢它就是把我们刚才所提到的这个网络节点上面的我们感兴趣的变量Y给它建模为了三部分，那么第一部分呢则是跟我们这个网络结构相关的，也就是我们将这个网络网络的矩阵呃连接矩阵A呢给它做一个行标准化之后，可以得到这样一个权重矩阵W，那么这个W呢就是包含了我们的网络结构，而这里的\rho呢则表示的是一个网络效应，那么这里它的网络效应就可以解读为这个网络中个体，其他的个体的一个啊这个变量值对于我们关注的个体的变量值它的一个影响大小。那么第二部分我们把它建模为这个啊网络个体，它本身可能会有一些其他的变量，啊这些变量我们叫做协变量，也就是说我们把这些变量呢放在这个N乘p维的一个X矩阵中，那对应的这个\beta呢就是协变量的效应。第三部分呢则是一个随机误差项的一个向量，那么这个模型呢我们就给它记作为SAR模型。那在传统的SAR模型的估计方法呢其实从很早之前就有很多工作在做这些呃研究，比如说我们这个04年的时候呢，呃04年的这个这篇工作呢就是李龙飞他们这个工作，他们就是提出了一个这个拟极大似然估计的方法，来对我们刚才说的这个呃SAR模型做估计。但是在这样的一个估计方法中呢，如果我们的网络结构中节点数量非常多的话，我们是很难就是去啊对这种高维的矩阵求逆的，那么就导致了这个大规模的网络场景下呢，拟极大似然估计方法不一定适用，呃在此基础上呢，其实啊还有一些这个做计量的学者们，他们提出了使用这个工具变量的方法来去估计我们刚才所说的SAR模型，但是基于工具变量的方法呢其实它依赖于我们如何去选择一个合适的工具变量，所以它呢呃如果说我们没有这个很好的这个外生变量来作为工具变量的话，就会影响我们模型估计的一个效果。",
+      "gold_ocr": "Spatial Autoregression Model \ny = \rho W y + X \beta + \\varepsilon \nObservations: y = (Y_1, \\dots, Y_N)^\top \\in \\mathbb{R}^N \nCovariates: X = (X_1, \\dots, X_N)^\top \\in \\mathbb{R}^{N \times p} \nWeight (row-normalize A): W = (w_{ij}) \\in \\mathbb{R}^{N \times N} \nNoise vector: \\varepsilon = (\\varepsilon_1, \\dots, \\varepsilon_N)^\top \\in \\mathbb{R}^N\n Quasi-maximum Likelihood Method\n IV-based Method",
+      "gold_window": [
+        [
+          57.0,
+          120.0
+        ],
+        [
+          123.0,
+          184.0
+        ]
+      ],
+      "must_have_points": [
+        "包含完整的空间自回归模型的公式和模型中各变量含义",
+        "明确提到两种传统SAR模型的估计方法"
+      ],
+      "ground_truth_summary": "在这段视频中，讲者首先介绍了空间自回归模型（SAR），给出公式：y = \rho W y + X \beta + \\varepsilon，并对公式中的各符号逐一解释：y是N维观测变量向量，W是由邻接矩阵A行标准化得到的权重矩阵，用于刻画网络结构；\rho是网络效应系数，衡量网络中其他个体的变量值对目标个体的影响；X是N×p维协变量矩阵，\beta是协变量效应系数；\\varepsilon是噪声向量。接着，讲者回顾了两种种传统SAR模型估计方法及其局限性：一是拟极大似然法，存在大规模矩阵I_N - \rho W求逆的高计算负担，难以处理超大规模网络；二是基于工具变量的方法，依赖外生变量选择，缺乏灵活性。"
+    },
+    "meta_info": {
+      "difficulty_level": "easy",
+      "asr_quality": {
+        "accent": "标准口音",
+        "speed": "快",
+        "oral_correction": "有口头修正"
+      },
+      "ocr_quality": {
+        "ppt_density": "密集",
+        "formula_count": 1
+      }
+    }
+  },
+  {
+    "inputs": {
+      "video_filename": "case_07.mp4"
+    },
+    "outputs": {
+      "gold_transcription": "最小二乘估计量，\\hat{\theta}^w。那一个自然的问题就是我们这样得到的\\hat{\theta}^w，它的统就是统计上的这个理论性质怎么样呢？那这里我们就建立了首先建立了一个啊偏差方差分解的结果，也就是在满足一定的条件和假设下呢，我们给出的这个加权最小二乘估计量\\hat{\theta}^w它跟真实值之间之间的差可以分解为两部分，那其中这个B这一部分呢，它表示的是一个偏差项，那这个偏差项的量级在满足一定的条件下呢，它就是趋于0的了，而这个V表示的是一个方差项，这个方差项呢就是一个期望为零，然后协方差为常数的一个量。那进一步的呢我们就可以建立这个\\hat{\theta}^w它的一个渐近正态性，那我们可以看到，我们如果想要这个偏差项趋于零的话，首先就要满足这个啊样本量之间的这么一个关系，那么这个关系中的小n表示的是局部的呃就是局部的子计算机上面的样本量的一个量级。所以说我们只有小n远大于右边这一项的时候呢，我们的偏差项它才是一个趋于零的。那这就带来了一个问题，如果说我们现在这个分布式系统中是有很多个子计算机的，也就是换句话说有可能我们每一个子计算机上面的这个样本量它是非常小的，那当这个小n比较小的时候实际上这个啊我们构造出来的\\hat{\theta}^w的偏差的阶数呢就有可能会越来越大。所以说当我们要解决的问题就是当当这个局部的样本量比较小的时候，有没有可能去再进一步的降低我们这个偏差的量级呢。啊当然这个实际上在呃就是实际做这个分布式计算的时候呢，有时候因为这个想要加快局部的这个计算速度，自然会将局部的样本量调整的更小一些，所以说这个问问题是比较呃比较重要的一个问题。那么回答刚才这个问题当然是肯定的，就是我们可以采取一个这个啊第二轮的传输来调整刚才我们得到了这样的第一步的这个加权的最小二乘估计量也就是\\hat{\theta}^w。怎么去调整呢？首先我们有了这样的一个\\hat{\theta}^w之后，我们将它再传输到每一个子子计算机上面去，那在子计算机上面呢做进一步的一个啊迭代，也就是我们通过W呃\\hat{\theta}^w呢可以得到一个更新的局部估计量，我们记作\\hat{\theta}_k^{(2)}，以及一个更新的hansen矩阵。我们将这两个啊更新的量呢传回到这个master上面，也就可以构造出来一个我们叫做这个两步法的加权最小二乘估计，后面简称这个TWLSE。这个估计的构造方法呢就是跟前面的一步法的\\hat{\theta}^w呢是非常相似的，只是说在这里我们利用的是第二步的这个第二轮传输得到的一个估计信息。",
+      "gold_ocr": "A Refined Two-step Estimator (TWLSE)\n\\widetilde{\theta}^w = \\left\\{ \\sum_{k=1}^K \\alpha_k \\ddot{Q}_k(\\hat{\theta}_k) \right\\}^{-1} \\left\\{ \\sum_{k=1}^K \\alpha_k \n\\ddot{Q}_k(\\hat{\theta}_k) \\hat{\theta}_k \right\\}\n\\hat{\theta}_k^{(2)} = \\widetilde{\theta}^w - \\ddot{Q}_k^{-1}(\\widetilde{\theta}^w) \\dot{Q}_k(\\widetilde{\theta}^w)\n\\hat{\\Sigma}_k^{(2)} = \\ddot{Q}_k^{-1}(\\widetilde{\theta}^w)\nBroadcast the WLSE \\widetilde{\theta}^w to the local workers",
+      "gold_window": [
+        [
+          9.5,
+          41.0
+        ],
+        [
+          42.0,
+          120.0
+        ],
+        [
+          121.0,
+          181.0
+        ]
+      ],
+      "must_have_points": [
+        "明确提到加权最小二乘估计器（WLSE）的核心公式及其偏差-方差分解性质",
+        "说明WLSE在分布式小样本场景下的偏差量级增大问题及渐近正态性条件",
+        "介绍两步法精炼估计器（TWLSE）的构造流程与迭代公式"
+      ],
+      "ground_truth_summary": "在这段视频中，讲者首先介绍了分布式场景下的加权最小二乘估计器（WLSE），给出其核心公式，并对比了One-Shot估计器。随后，讲者深入分析了WLSE的理论性质，通过偏差-方差分解，将估计误差拆分为期望为零的方差项和趋于零的偏差项，并推导了其渐近正态性成立的条件。讲者指出，WLSE的偏差项量级与局部样本量强相关，当分布式系统中局部样本量过小时，偏差项会显著增大，影响估计精度。为解决这一问题，讲者提出了两步法精炼估计器（TWLSE）：首先由Master节点将WLSE估计量\\hat{\theta}^w广播至各Worker节点，各Worker节点进行一次迭代，得到精炼的局部估计量\\hat{\theta}_k^{(2)}和协方差矩阵\\hat{\\Sigma}_k^{(2)}，再回传给Master节点，有效降低了小样本场景下的估计偏差。"
+    },
+    "meta_info": {
+      "difficulty_level": "hard",
+      "asr_quality": {
+        "accent": "标准口音",
+        "speed": "快",
+        "oral_correction": "无口头修正"
+      },
+      "ocr_quality": {
+        "ppt_density": "密集",
+        "formula_count": 6
+      }
+    }
+  },
+  {
+    "inputs": {
+      "video_filename": "case_08.mp4"
+    },
+    "outputs": {
+      "gold_transcription": "那么我们来进入今天的报告。那么今天这个deep learning其实已经在很多的应用领域取得了非凡的成功，诸如像computer vision，natural language processing，包括像engineering等等各种应用领域。那么图一所示的话这是一个YOLO的architecture，那么他完成的就是这种实时的detection加classification。那么我们可以看到这个图像中的这些物体，它都被标出用框标了出来，并且给了一个类别的判断。那么图二所展示的是 google 它研发的这个 bert 是一个预训练的这样的一个很大的语言模型，那么主要是处理 NLP 任务的。那么图三展示的就是说最近一个比较火的就是 AI for science 这个是 DeepMind 研发的 Alphafold2，它是来预用这个deep learning来预测这个蛋白质结构。然后我们可以看到实际上这个蓝色的部分是这个呃，Alphafold2预测的这个蛋白质的结构。然后绿色的部分是我们通过实验测得的，然后可以看到实际上这个Alphafold2的效果还是非常好的。那么在这个，呃，deep learning 里面的话，所谓 deep learning，它其实就是说这里面采用的这个 model 是一个 deep neural network，那么所谓这个 deep neural network，我们用这个 multi layer 的 neural network 来说，其实简单说，它就是一个映射，比如说从 rd 的这个x映射到 rm 的这个 y，那么这个映射它是一层一层的一个复合上去的，最开始的这个 x，首先过一个matrix W 的这样的一个线性变换，再加上一个 bias b，之后再过一个这样的一个 activation function /sigma，然后注意这里面这个/sigma一般是 nonlinear 的，而正是因为有这个nonlinear的引入，然后这个 deep learning 才有着就如此巨大的成功。因为我们知道，如果说这个sigma它是一个线性的，或者是说这个sigma根本不存在，那么实际上无论多少层这样的线性的变换复合上去，其实它都等效于一层的 W 和一个 bias b。那么在今天的我们的介绍的工作里面，我们主要关注的是ReLU network，也就是说这里我们的这个 activation function /sigma 选入这个ReLU neural，那么ReLU neural 它的数学表达式就是说 \\sigma(x)等于零和 X 的最大值，也就是说它会对它会保留信号输入的正值部分，而将信号输入的负值部分全部视为零。那么下图所示的是这个用这个 deep neural network 做图像分类任务的一个示例。我们把这个一个，比如说一个鸟的这个图像 pixel by pixel 的输入到这个 input layer 里面，然后那么经过这个训练好的deep neural network 一层一层的这样的一个 inference 最后到达这个 output layer ，那么我们注意到，如果我们的这个待定类别有三个，比如说有这个狗、鸟和猫，那么我们在最后一层的这个output 层就设立三个 neural，那么每个neural上最后的这个输出值就代表了它是该类别的一个概率。那么我们将这个概率取最大值，就可以视为这个网络对这个图像的类别预测的结果。那么事实上，在这个真实数据集上，我们去做这个训练得到的这个神经网络对于这种图像分类任务已经取得了很大的成绩。",
+      "gold_ocr": "Deep Learning in Applications\nDeep Neural Network\nA multilayer neural network\n\\mathbf{h}_1 = \\sigma(\\mathbf{W}_1 \\mathbf{x} + \\mathbf{b}_1), \\mathbf{W}_1 \\in \\mathbb{R}^{m_1 \times d}, \\mathbf{b}_1\\in\\mathbb{R}^{m_1}\n\\mathbf{h}_\\ell = \\sigma(\\mathbf{W}_\\ell \\mathbf{h}_{\\ell-1} + \\mathbf{b}_\\ell), \\mathbf{W}_\\ell \\in \\mathbb{R}^{m_\\ell \times m_{\\ell-1}}, \\mathbf{b}_\\ell \\in \\mathbb{R}^{m_\\ell}, 2 \\le \\ell \\le L-1\n\\mathbf{y} = \\mathbf{W}_L \\mathbf{h}_L + \\mathbf{b}_L, \\mathbf{W}_L \\in \\mathbb{R}^{m \times m_L}, \\mathbf{b}_L \\in \\mathbb{R}^m\n\\sigma(x) = \\max\\{0, x\\}",
+      "gold_window": [
+        [
+          5.5,
+          71.3
+        ],
+        [
+          72.0,
+          131.0
+        ],
+        [
+          131.2,
+          208.0
+        ]
+      ],
+      "must_have_points": [
+        "明确提到深度学习在计算机视觉、自然语言处理、科学工程三大领域的应用，并举例YOLO、BERT、AlphaFold2",
+        "给出深度神经网络的通用递归定义公式，并解释各层符号含义",
+        "说明ReLU激活函数的定义及其在深度学习中的核心作用"
+      ],
+      "ground_truth_summary": "在这段视频中，讲者首先介绍了深度学习在计算机视觉、自然语言处理、科学与工程三大领域的突破性进展，并以YOLO（目标检测）、BERT（预训练语言模型）、AlphaFold2（蛋白质结构预测）为例，展示了不同场景下的典型应用。随后，讲者给出了深度神经网络的通用递归定义，将其描述为从输入向量x到输出向量y的多层复合映射，并解释了权重矩阵W、偏置项b和激活函数σ的作用，强调非线性激活函数是深度学习模型能够拟合复杂模式的关键。最后，讲者聚焦于ReLU网络，给出了激活函数σ(x) = max{0, x}的定义，说明其通过保留正信号、抑制负信号来引入非线性，并以图像分类任务为例，展示了深度神经网络从输入层到输出层的完整推理过程，验证了深度学习在真实数据集上的优异性能。"
+    },
+    "meta_info": {
+      "difficulty_level": "easy",
+      "asr_quality": {
+        "accent": "标准口音",
+        "speed": "适中",
+        "oral_correction": "无口头修正"
+      },
+      "ocr_quality": {
+        "ppt_density": "稀疏",
+        "formula_count": 3
+      }
+    }
+  },
+  {
+    "inputs": {
+      "video_filename": "case_09.mp4"
+    },
+    "outputs": {
+      "gold_transcription": "大家先回顾一下传统的呃，双样本检验主要是有两类方法，第一类就是student T 检验和 ho ho hoteling T 检验，这呃两类检验主要是用于检验两个总体均值之间的差异大致分为低维的啊和高维的两类研究工作，另一类呢是基于秩的检验，主要用于检验两个总体之间分布的差异就是它的 distribution 需要强调的是，传统的啊，这些检验方法并没有利用知识，就是我刚才给大家说的，我们把原假设正确的前提下看成是我们接下来进行数据重构的这样一个 knowledge 我们在如何去用这些数据呢？并没有。为什么呢？因为传统的假设检验都把所有的样本看成是 iid 的。也就是说所有的 data 它是可交换的每一个样本在构造检验统计量的时候的那个地位实际上是一样的。比如啊，我们在进行这样一个假设检验的时候，使用的样本可能就是 x_1 减 y_1，x_2 减 y_2，x_3 减 y_3，这个 x1 减 y_1 和 x_2 减y_2这两个样本实际上是一个 independent，也就是独立的，我们可以把它先简单的理解成是可交换的，在此这种啊，嗯，数据可交换的假设下，我们完全可以使用标准化的正态分布所对应的检验统计量，常见的就是这两种形式，要么就是以 X 减 Y 表示的，要么就是以 Y 减 X 表示的这两种检验统计量，来构造啊，呃，来进行双样本的这种检验。但你需要注意的是，此检验统计量的构造过程啊，还是跟大家多次强调，并没有运用知识，就是我们并没有用原假设正确的前提下这个啊，呃，比如说这个这个知识来构造这个检验统计量，所以说从构造的这个结果来看啊，经过标准化处理之后，标准化处理，因为这一个检验统计量其实就是一个标准化的结果，我们没法看到这个知识的信息，因为在这个d_0等于啊，\\mu_1减\\mu_2。刚才这个 X 的期望是\\mu_1，y的期望是\\mu_2的前提下你会发现这检两个检验统计量的分布均服从标准正态分布。OK ，那么，在这个检验统计量的这个函数表达式中啊，我们如何去体现这个原假设的信息呢？因为我们把原假设，呃，正确，当成了一个呃，先验的信息，或者是当成了一个知识，一个直接的思路就是引入样本均值。呃，一个样本均值均值就是通过 X 减 Y 去体现，也就是说以 X 减 Y 为总体的这些样本的样本，我们可以以一个样本均值的形式，另外一个是以 Y 减 X 来体现，其实通过 slus，slusky 定理，大家可以看一下这两个检验统计量的基线分布分别是以 \\mu_1 减 \\mu_2 和 \\mu_2 减 \\mu_1 为中心，呃，尤其是在就是呃，在这个 d_0等于\\mu_1 减\\mu_2 或者是\\mu_2 减 \\mu_1 前提下，我们可以发现这两个检验统计量存在系统性差异。统计量就是随机变量，刚才跟大家做了一个铺垫，就是什么时候进行数据重构，也就是说当两个总体存在差异的时候，我们就可以对它进行数据重构。啊，也就是通过这两个统计量的形式呢，我们嗯，对观测样本啊， X 减 Y 或 Y 减 X 进行重构，因为呃，在这样一个重构过程当中，我们就可以充分利用这个\\mu_1 减 \\mu_2大于等于 d_0 这样一个先验信息。在这里啊，对这两个正好是互为相反数，互为相反数，呃，这样的一个构造就是为了想传递一种什么信息呢？这两个检验统计量实际上是在，呃，population 的这个层面实际上是存在差异的，一个是\\mu_1 减 \\mu_2，一个是\\mu_2 减 \\mu_1，但是从假设检验的角度去看的话，这两个检验统计量，实际上检验的功效，是一模一样的，不存在差异。",
+      "gold_ocr": "Student's t-test or Hotelling's T^2\nRank-based methods\nTwo traditional test statistics following the normal distribution:\\frac{1}{\\sqrt{J}} \\sum_{j=1}^J \\frac{(X_j-Y_j-d_0)}{\\sigma} and \\frac{1}{\\sqrt{J}} \\sum_{j=1}^J \\frac{(Y_j-X_j+d_0)}{\\sigma}, where \\sigma^2 = \text{var}(X_j-Y_j)\ntwo additional statistics:\\frac{1}{J} \\sum_{j=1}^J (X_j-Y_j) + \\frac{1}{\\sqrt{J}} \\sum_{j=1}^J \\frac{(X_j-Y_j-d_0)}{\\sigma}\n\\frac{1}{J} \\sum_{j=1}^J (Y_j-X_j) + \\frac{1}{\\sqrt{J}} \\sum_{j=1}^J \\frac{(Y_j-X_j+d_0)}{\\sigma}",
+      "gold_window": [
+        [
+          0.0,
+          89.8
+        ],
+        [
+          90.0,
+          168.0
+        ],
+        [
+          168.5,
+          270.0
+        ]
+      ],
+      "must_have_points": [
+        "明确传统双样本检验的两类方法：基于均值的检验和基于秩的检验",
+        "给出两种传统正态分布检验统计量的公式，并解释其未考虑原假设信息的问题",
+        "介绍引入先验知识后构造的两种新型检验统计量，并说明其渐近分布的系统性差异"
+      ],
+      "ground_truth_summary": "在这段视频中，讲者首先回顾了传统双样本检验的两类主流方法：基于均值的Student's t检验与Hotelling's T²检验（适用于低维及高维场景）、基于秩的非参数检验（如Wilcoxon检验、Kolmogorov-Smirnov检验等），并指出这些方法均未利用原假设蕴含的先验知识，将样本视为可交换的独立同分布数据。随后，讲者介绍了两种传统正态分布检验统计量的构造形式，说明其标准化处理后服从标准正态分布，无法体现原假设信息的局限性。最后，讲者提出引入先验知识的改进思路，通过在传统统计量中加入样本均值项，构造了两种新型检验统计量，其渐近分布分别以\\mu_1-\\mu_2和\\mu_2-\\mu_1为中心，存在系统性差异，从而打破了数据的可交换性，实现了对原假设信息的有效利用。"
+    },
+    "meta_info": {
+      "difficulty_level": "hard",
+      "asr_quality": {
+        "accent": "有轻微口音",
+        "speed": "适中",
+        "oral_correction": "有口头修正"
+      },
+      "ocr_quality": {
+        "ppt_density": "密集",
+        "formula_count": 2
+      }
+    }
+  },
+  {
+    "inputs": {
+      "video_filename": "case_10.mp4"
+    },
+    "outputs": {
+      "gold_transcription": "首先我先介绍一下我们嗯，这个问题的背景是网络结构数据，呃，什么是网络结构数据呢？我们这里给了呃三个简单的例子。嗯，第一个例子是地理网络，就是如果两个两个社区或者说两个小区，他们如果在地理上距离比较近的话，我们就认为在他们是之间是有联系的，这是一个嗯，地理网络，第二个就是社交网络，要像我们平时用的微博，呃，可以根据微博之间好友之间的关注关系，可以形成，嗯，一个微博，共，呃，社交网络，然后第三个是共同行为网络，也就是说我们不同的人，他会在很多店铺去消费，如果我们可以认为两个人如果在同一家店铺消费过，我们就可以认为这两个人是有联系的，由此构成的网络就叫共同行为网络。然后这样的话，我们就希望去把这个个体之间的联系，用一个矩阵来表示，这里我们定义的就是邻接矩阵，像前面的三个例子里面，如果两个人之间i_1、i_2用户或者说个体，他们之间是有联系的，然后我们就会认为对应的邻接矩阵中间的这个元素它是等于一，否则的话就认为这两个人是没有联系的，也就是认，呃，认为这个邻接矩阵的对应元素是等于零。啊，这里面我们首先假设自己跟自己是不能相连的，这个是为了，呃，回归里面的那个形式，呃，的一个要求啊，在这里我们对于这个邻接矩阵给它做一个行归一化，呃，这个行归一化就是拿每个元素去除以它的行和。嗯，然后通过这样得到了一个权，呃，权重的这个邻接矩阵，然后由此我们去构建我们这个文章中所要探讨的一个模型叫空间自回归模型。啊，空间自回归模型是研究网络数据的一个非常基本的模型啊，这个自回归模型它表达的形式是长成这个样子的，就是对于一个 i_1 这个节点来说，它是受到跟它有连接的节点 i_2 这些节点的影响，以及受到这个 i_1 节点它自身的 X 代表协变量的影响，然后还再加上这个误差项。在这个里面，嗯，我们对应前面的实际数据里面的例子就是说每个人他的行为都会受到与他相连接的人的行为的影响，然后除此之外还会受到他的自身的影响。所以，呃，由此构建的这样一个模型是就，呃，给它称之为空间自回归模型。在这个里面我们有两种参数，一种参数是这个\rho，它刻画的就是在网络个体中间的平均影响强度啊，这个 \rho 它也就体现在体现出了我们这个网络中的回归模型跟传统的，呃，线性回归模型的差异，就是说在网络数据中我们认为个体之间的行为是相互影响的，而在传统数据中，我们在回归中是没有考虑这一项。嗯然后我们把前面的那个式子给它，呃，写成矩阵的一个形式就可以表达成这个样子。在这个里面，呃，y 呃，表示的一个是一个列向量，它是从一到大N总共大 N 个个体的斜变量，然后这个 W 矩阵就是前面我们提到的邻接矩阵进行归一标准化之后的一个，呃，权重，空间权重矩阵。然后这个X它表示的就是这个N个节点的协变量特征，呃，构成的矩阵，这里面是我们认为是有P维的特征，然后这个 epsilon 就是表示一个 N 维的呃，那个误差项在这个里面，仍然这个\rho是一个呃，标量参数，是空间自回归的一个标量参数，然后这个/beta是一个p维度的呃，呃，呃，协变量的那个参数。啊，这个是呃，经典的空间自回归模型的矩阵形式。",
+      "gold_ocr": "Network data\n邻接矩阵A = (a_{i_1i_2}) \\in \\mathbb{R}^{N \times N}, a_{i_1i_2} = 1 如果个体 i_1 和 i_2 是有联系的，否则，a_{i_1i_2} = 0 \n假定自己和自己不能相连，即a_{ii} = 0\n记 W = (w_{i_1i_2}) \\in \\mathbb{R}^{N \times N} 表示行标准化邻接矩阵，其中w_{i_1i_2} = a_{i_1i_2} / \\sum_{i_2} a_{i_1i_2}\n空间自回归模型（spatial autoregressive model, SAR）\n\nY_{i_1} = \\sum_{i_2 \neq i_1} \rho w_{i_1i_2} Y_{i_2} + X_{i_1} \beta + \\epsilon_{i_1}\n空间自回归模型的矩阵形式为Y = \rho W Y + X \beta + \\epsilon\n其中Y = (Y_1, \\dots, Y_N) \\in \\mathbb{R}^N, W = (w_{ij}) \\in \\mathbb{R}^{N \times N}, X = (X_1, \\dots, X_N) \\in \\mathbb{R}^{N \times p}, \\epsilon = (\\epsilon_1, \\dots, \\epsilon_N) \\in \\mathbb{R}^N",
+      "gold_window": [
+        [
+          0.0,
+          82.0
+        ],
+        [
+          83.0,
+          188.0
+        ],
+        [
+          190.0,
+          245.0
+        ]
+      ],
+      "must_have_points": [
+        "明确网络结构数据的三类典型场景（地理/社交/共同行为网络）及邻接矩阵的定义",
+        "给出空间自回归模型（SAR）的个体形式公式，并解释参数\rho的含义",
+        "给出SAR模型的矩阵形式，并解释Y、W、X、\\epsilon等核心变量的含义"
+      ],
+      "ground_truth_summary": "在这段视频中，讲者首先介绍了网络结构数据的三类典型场景，包括地理网络、社交网络和共同行为网络，并引入邻接矩阵A来刻画个体间的连接关系，定义了行标准化权重矩阵W。随后，讲者引出空间自回归模型（SAR），给出其个体形式公式Y_{i_1} = \\sum_{i_2 \neq i_1} \rho w_{i_1i_2} Y_{i_2} + X_{i_1} \beta + \\epsilon_{i_1}，并解释了参数\rho对网络个体间平均影响强度的刻画作用。最后，讲者给出了SAR模型的矩阵形式Y = \rho W Y + X \beta + \\epsilon，并对Y、W、X、\\epsilon等核心变量的含义进行了说明，强调该模型能够刻画网络数据中个体行为的相互影响。"
+    },
+    "meta_info": {
+      "difficulty_level": "easy",
+      "asr_quality": {
+        "accent": "标准口音",
+        "speed": "适中",
+        "oral_correction": "有口头修正"
+      },
+      "ocr_quality": {
+        "ppt_density": "稀疏",
+        "formula_count": 2
+      }
+    }
+  }
+]
