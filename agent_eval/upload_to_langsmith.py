@@ -7,7 +7,7 @@ def upload_dataset():
     # ⚠️ 提示：在最终的项目交付代码中，建议删掉 api_key 参数，仅依靠环境变量读取，防止密钥泄露。
     client = Client()
     
-    dataset_name = "ConferAI-Eval-Set"
+    dataset_name = "ConferAI-Eval-Set-new"
     
     # 2. 检查数据是否存在
     if not client.has_dataset(dataset_name=dataset_name):

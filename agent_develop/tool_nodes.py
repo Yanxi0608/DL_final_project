@@ -383,6 +383,10 @@ def node_align(state: ConferenceState) -> dict[str, Any]:
     return {"aligned_units": aligned_units}
 
 
+def node_rag_d_self_index(state: ConferenceState) -> dict[str, Any]:
+    """本场 RAG 占位节点（主图拓扑保留，评测阶段暂不检索）。"""
+    return {"rag_snippets": []}
+
 
 # ========================== OCR部分 =========================
 # 说明：使用paddleocr；该深度学习模型可以同时实现文字和公式识别，

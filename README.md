@@ -1,4 +1,6 @@
-# 学术会议总结智能体 — 大作业框架说明（LangGraph开发 + LangSmith运维）
+# 学术会议总结智能体 ConferAI
+
+# LangGraph开发 + LangSmith运维
 
 ## 一、业务背景说明
 
@@ -28,7 +30,7 @@
 
 ---
 
-## 二、基于LangGraph框架的ageng开发部分
+## 二、基于LangGraph框架的agent开发部分
 
 ### 1. 感知与预处理工具
 
@@ -286,7 +288,6 @@ if __name__ == "__main__":
     print(final_state.get("draft_summary", ""))
 ```
 
-
 ### 三、基于LangSmith框架的agent运维部分
 
 **阶段一**：可观测性（运行过程白盒化）
@@ -300,65 +301,18 @@ if __name__ == "__main__":
 
 - 目标：构建自动化 LLM-as-a-Judge 评估管道，量化系统的总结质量，为后续的方法优化与架构重构提供数据基准。
 - 准备黄金数据集/参考答案：在 LangSmith UI 中创建一个名为 `Conference-Eval-Set` 的 Dataset；手动录入 10-20 个测试切片（每个切片对应 3-5 分钟的复杂视频片段）；对于每个切片，人工手写出完美的 Markdown 摘要（Ground Truth），并列出必须包含的 3-5 个核心知识点（如特定公式、专有名词、核心结论）。
-- 中间组件裁判：ASR 质量：计算词错率，确保专有名词捕获准确。OCR 质量：计算字符错误率，确保公式符号提取不畸变。对齐质量：计算时间窗交并比 ，评估音视频绑定逻辑的精准度。
-- 最终生成裁判：定义评分规则与模板，利用 LangSmith 的 `evaluate` 函数，配置两个核心维度的自动化打分逻辑。忠实度 ：强制要求裁判模型验证生成的摘要是否严格遵循 AlignedUnit 提供的数据池，严防“模型幻觉”。知识点召回率：比对摘要是否完整包含黄金数据集中标注的 3-5 个核心知识点。
+- Evaluator框架
 - 产出模型能力基准报告：生成可视化指标矩阵（包含组件级误差与端到端质量指标），并通过多轮次跑批分析评估方差，量化模型在不同数据类型下的稳定性。
 
-```python
-# ===========组件级评估函数===============
-# 1. ASR 质量：计算词错率 (Word Error Rate)
-def evaluate_asr_wer(run, example):
-    from jiwer import wer # 推荐使用开源库
-    pred = run.outputs.get("transcription", "")
-    gt = example.outputs.get("gold_transcription", "")
-    score = wer(gt, pred)
-    return {"key": "asr_wer", "score": score}
+**Evaluator框架说明**
+1. 端到端总结质量（LLM-as-Judge）：目的是评估摘要生成质量，包括关键点召回率、幻觉检测、整体语义相似度三个指标。关键点召回率将`must_have_points`里每一条作为Y/N提问judge，返回覆盖率（0-1），同时产出指标平均召回率与hard case上的召回率。幻觉检测将summary拆分成知识点，驻点判断能否在`gold_transcription + gold_ocr`里找到支持，返回被支持事实占比。整体语义相似度基于得分点给1-5分，比较summary和`ground_truth_summary`的寓意贴合度
 
-# 2. OCR 质量：计算字符错误率 (Character Error Rate)
-def evaluate_ocr_cer(run, example):
-    from jiwer import cer
-    pred = run.outputs.get("ocr_text", "")
-    gt = example.outputs.get("gold_ocr", "")
-    score = cer(gt, pred)
-    return {"key": "ocr_cer", "score": score}
 
-# 3. 对齐质量：计算时间窗交并比 (IoU)
-def evaluate_alignment_iou(run, example):
-    # 逻辑：比较 Agent 生成的时间戳切片与黄金标注的时间戳重叠度
-    pred_range = run.outputs.get("time_window", [0, 0])
-    gt_range = example.outputs.get("gold_window", [0, 0])
-    
-    intersection = max(0, min(pred_range[1], gt_range[1]) - max(pred_range[0], gt_range[0]))
-    union = (pred_range[1] - pred_range[0]) + (gt_range[1] - gt_range[0]) - intersection
-    iou = intersection / union if union > 0 else 0
-    return {"key": "alignment_iou", "score": iou}
 
-# ============摘要生成评估函数===============
-# 4. 忠实度：防幻觉检测
-def check_faithfulness(run, example):
-    summary = run.outputs.get("summary", "")
-    source_context = run.outputs.get("aligned_data", "")
-    
-    prompt = f"请作为专家检查摘要是否存在幻觉。仅基于以下内容：\n{source_context}\n摘要：{summary}\n给出0-1评分。"
-    score = llm_judge.invoke(prompt) # 返回 0.0 到 1.0
-    return {"key": "faithfulness", "score": float(score)}
+2. agent流水线中间环节（Code Evaluator）：目的是评估agent流水线中间环节，用于失败case归因，包括公式文字识别覆盖率、ASR识别覆盖率。公式文字识别覆盖率从`gold_ocr`用正则提取所有latex公式，从`ocr_blocks` 取 `type=="formula"` 的内容，比对后返回召回率。ASR识别覆盖率把`transcript_segments` 的 `text` 字段拼起来 vs `gold_transcription`，比对后再给返回召回率。
 
-# 5. 核心知识点召回率
-def check_recall(run, example):
-    summary = run.outputs.get("summary", "")
-    required_points = example.outputs.get("must_have_points", [])
-    
-    # 让 LLM 判定每个点是否被覆盖
-    prompt = f"摘要是否包含以下所有知识点: {required_points}？摘要内容: {summary}。请给出召回比例。"
-    score = llm_judge.invoke(prompt)
-    return {"key": "knowledge_recall", "score": float(score)}
-
-# =============指标聚合=====================
-```
 
 **阶段三**：建立优化框架并验证优化成果
 
-- 说明：这部分不具体写代码后续优化，只在ppt上展现三个结构块
-- A：归因分析：当指标得分偏低时，可能的排查路径（例如识别/时间窗对齐/上下文忽略）
-- B：A/B-test
-- C：预期的统计检验指标
+
+
